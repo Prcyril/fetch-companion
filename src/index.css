@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Fraunces', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-canvas: #F5F5F7;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F0F0F2;
+
+  --color-fetch-pink: #F279C5;
+  --color-fetch-pink-wash: #F9E0F3;
+
+  --color-ink: #1A1A1A;
+  --color-muted: #6B6B6B;
+  --color-border: #DEDEDE;
+  --color-banner: #EEF0F8;
+
+  --color-event-vet: #1D9E75;
+  --color-event-vet-bg: #E1F5EE;
+  --color-event-vet-text: #0F6E56;
+
+  --color-event-med: #E8A020;
+  --color-event-med-bg: #FFF5E0;
+  --color-event-med-text: #854F0B;
+
+  --color-event-insurance: #5B8DEF;
+  --color-event-insurance-bg: #EEF0F8;
+  --color-event-insurance-text: #3A4A9A;
+
+  --color-event-wellness: #9B72CF;
+  --color-event-wellness-bg: #F3EEFB;
+  --color-event-wellness-text: #6B3FA0;
+
+  --color-event-milestone: #F279C5;
+  --color-event-milestone-bg: #F9E0F3;
+  --color-event-milestone-text: #A0348A;
+
+  --color-event-emergency: #E05A5A;
+  --color-event-emergency-bg: #FCEAEA;
+  --color-event-emergency-text: #A03030;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #E8E8EA;
+  font-family: var(--font-sans);
+  color: #1A1A1A;
+  margin: 0;
+  padding: 0;
+}
