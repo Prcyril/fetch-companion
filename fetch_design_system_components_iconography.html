@@ -1,0 +1,340 @@
+
+<style>
+  .r { font-family: var(--font-sans); padding: 1.25rem 0; }
+  .sec { margin-bottom: 2rem; }
+  .lbl { font-size: 11px; font-weight: 500; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
+  .note { background: var(--color-background-secondary); border-radius: 8px; padding: 10px 12px; font-size: 12px; color: var(--color-text-secondary); border-left: 3px solid #F279C5; margin-bottom: 12px; }
+  .mono { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); }
+  .card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: 12px; padding: 14px; }
+  .token-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .token-row:last-child { border-bottom: none; }
+  .token-name { font-size: 12px; font-weight: 500; color: var(--color-text-primary); }
+  .token-val { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); }
+  .chip { display: inline-flex; align-items: center; border-radius: 9999px; padding: 5px 12px; font-size: 12px; border: 0.5px solid #DEDEDE; background: white; color: #1A1A1A; gap: 4px; white-space: nowrap; }
+  .pill { display: inline-flex; align-items: center; gap: 5px; border-radius: 9999px; padding: 4px 10px; font-size: 12px; font-weight: 500; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+  .icon-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 8px; }
+  .icon-item { display: flex; align-items: center; gap: 10px; background: var(--color-background-secondary); border-radius: 8px; padding: 10px 12px; }
+  .icon-label { font-size: 12px; font-weight: 500; color: var(--color-text-primary); }
+  .icon-use { font-size: 11px; color: var(--color-text-tertiary); margin-top: 1px; }
+  .event-card { background: white; border: 0.5px solid #DEDEDE; border-radius: 12px; padding: 12px 14px; }
+  .pet-avatar { width: 40px; height: 40px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .input-field { width: 100%; box-sizing: border-box; border: 1.5px solid #F279C5; border-radius: 14px; padding: 12px 14px; font-size: 15px; color: #1A1A1A; background: white; outline: none; font-family: var(--font-sans); }
+  .input-field-idle { width: 100%; box-sizing: border-box; border: 1px solid #DEDEDE; border-radius: 14px; padding: 12px 14px; font-size: 15px; color: #6B6B6B; background: white; outline: none; font-family: var(--font-sans); }
+  .checkbox-row { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .checkbox-row:last-child { border-bottom: none; }
+  .cb-checked { width: 22px; height: 22px; border-radius: 50%; background: #F279C5; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .cb-idle { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid #DEDEDE; flex-shrink: 0; }
+  .banner { background: #EEF0F8; border-radius: 10px; padding: 12px 14px; display: flex; align-items: flex-start; gap: 10px; }
+</style>
+
+<div class="r">
+
+  <div class="sec">
+    <p class="lbl">Component tokens — buttons</p>
+    <div class="card">
+      <div class="token-row">
+        <span class="token-name">Primary CTA</span>
+        <span class="token-val">bg #1A1A1A · text white · radius 9999px · h 52px · w 100%</span>
+      </div>
+      <div class="token-row">
+        <span class="token-name">Secondary CTA</span>
+        <span class="token-val">bg white · border 1px #DEDEDE · radius 9999px · h 52px · w 100%</span>
+      </div>
+      <div class="token-row">
+        <span class="token-name">Selected/accent</span>
+        <span class="token-val">bg #F279C5 · text white · radius 9999px · h 52px</span>
+      </div>
+      <div class="token-row">
+        <span class="token-name">Split pair</span>
+        <span class="token-val">each flex:1 · gap 8px · same h 52px</span>
+      </div>
+      <div class="token-row">
+        <span class="token-name">FAB (add event)</span>
+        <span class="token-val">bg #1A1A1A · w 52px · h 52px · radius 50% · icon white 20px</span>
+      </div>
+      <div class="token-row">
+        <span class="token-name">Font</span>
+        <span class="token-val">15px · weight 500 · no letter-spacing</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">Component tokens — inputs</p>
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px;">
+      <div>
+        <div class="input-field-idle">Pet's name</div>
+        <p class="mono" style="margin-top: 5px;">Idle · border 1px #DEDEDE · radius 14px · pad 12px 14px</p>
+      </div>
+      <div>
+        <div class="input-field">Bunty</div>
+        <p class="mono" style="margin-top: 5px;">Active/focus · border 1.5px #F279C5 · same radius + pad</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="token-row">
+        <span class="token-name">Height</span>
+        <span class="token-val">48px (single line)</span>
+      </div>
+      <div class="token-row">
+        <span class="token-name">Border idle</span>
+        <span class="token-val">1px solid #DEDEDE</span>
+      </div>
+      <div class="token-row">
+        <span class="token-name">Border focus</span>
+        <span class="token-val">1.5px solid #F279C5</span>
+      </div>
+      <div class="token-row">
+        <span class="token-name">Border radius</span>
+        <span class="token-val">14px</span>
+      </div>
+      <div class="token-row">
+        <span class="token-name">Label</span>
+        <span class="token-val">11px · #6B6B6B · floats above on focus</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">Component tokens — checkboxes</p>
+    <div class="card">
+      <div class="checkbox-row">
+        <div class="cb-checked"><i class="ti ti-check" style="font-size:13px; color:white;" aria-hidden="true"></i></div>
+        <div>
+          <div style="font-size:14px; color:var(--color-text-primary);">I haven't had any insurance cancelled in 5 years</div>
+          <div style="font-size:11px; color:#6B6B6B; margin-top:2px;">Checked state</div>
+        </div>
+      </div>
+      <div class="checkbox-row">
+        <div class="cb-idle"></div>
+        <div>
+          <div style="font-size:14px; color:var(--color-text-primary);">I've added all vets Bruno has been to</div>
+          <div style="font-size:11px; color:#6B6B6B; margin-top:2px;">Idle state</div>
+        </div>
+      </div>
+    </div>
+    <p class="mono" style="margin-top: 8px;">Circle checkbox · checked: bg #F279C5 · idle: border 1.5px #DEDEDE · size 22px</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">Component tokens — detail chips</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
+      <span class="chip">Bruno <i class="ti ti-chevron-right" style="font-size:11px;" aria-hidden="true"></i></span>
+      <span class="chip">Dog <i class="ti ti-chevron-right" style="font-size:11px;" aria-hidden="true"></i></span>
+      <span class="chip">4 yr old <i class="ti ti-chevron-right" style="font-size:11px;" aria-hidden="true"></i></span>
+      <span class="chip">Insured <i class="ti ti-chevron-right" style="font-size:11px;" aria-hidden="true"></i></span>
+    </div>
+    <div class="card">
+      <div class="token-row"><span class="token-name">Background</span><span class="token-val">white</span></div>
+      <div class="token-row"><span class="token-name">Border</span><span class="token-val">0.5px solid #DEDEDE</span></div>
+      <div class="token-row"><span class="token-name">Radius</span><span class="token-val">9999px</span></div>
+      <div class="token-row"><span class="token-name">Padding</span><span class="token-val">5px 12px</span></div>
+      <div class="token-row"><span class="token-name">Font</span><span class="token-val">12px · weight 400</span></div>
+      <div class="token-row"><span class="token-name">Width</span><span class="token-val">fit-content — never stretch</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">Component tokens — event pills</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;">
+      <span class="pill" style="background:#E1F5EE; color:#0F6E56;"><span class="dot" style="background:#1D9E75;"></span>Vet visit</span>
+      <span class="pill" style="background:#FFF5E0; color:#854F0B;"><span class="dot" style="background:#E8A020;"></span>Medication</span>
+      <span class="pill" style="background:#EEF0F8; color:#3A4A9A;"><span class="dot" style="background:#5B8DEF;"></span>Insurance</span>
+      <span class="pill" style="background:#F3EEFB; color:#6B3FA0;"><span class="dot" style="background:#9B72CF;"></span>Wellness</span>
+      <span class="pill" style="background:#F9E0F3; color:#A0348A;"><span class="dot" style="background:#F279C5;"></span>Milestone</span>
+      <span class="pill" style="background:#FCEAEA; color:#A03030;"><span class="dot" style="background:#E05A5A;"></span>Emergency</span>
+    </div>
+    <div class="card">
+      <div class="token-row"><span class="token-name">Radius</span><span class="token-val">9999px</span></div>
+      <div class="token-row"><span class="token-name">Padding</span><span class="token-val">4px 10px</span></div>
+      <div class="token-row"><span class="token-name">Font</span><span class="token-val">12px · weight 500</span></div>
+      <div class="token-row"><span class="token-name">Dot</span><span class="token-val">7px circle · same hue family as bg</span></div>
+      <div class="token-row"><span class="token-name">Text colour</span><span class="token-val">dark stop of same hue — never black</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">Component tokens — timeline event card</p>
+    <div style="margin-bottom: 12px;">
+      <div class="event-card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;">
+          <span class="pill" style="background:#E1F5EE; color:#0F6E56; font-size:11px; padding:3px 10px;"><span class="dot" style="background:#1D9E75; width:6px; height:6px;"></span>Vet visit</span>
+          <span style="font-size:11px; color:#6B6B6B;">14 Mar 2025</span>
+        </div>
+        <div style="font-size:15px; font-weight:500; color:#1A1A1A;">Annual check-up</div>
+        <div style="font-size:12px; color:#6B6B6B; margin-top:2px;">City Road Animal Hospital</div>
+        <div style="font-size:12px; color:#6B6B6B; margin-top:6px; line-height:1.5;">All vitals normal. Weight 32kg stable.</div>
+        <div style="display:flex; align-items:center; gap:6px; margin-top:10px; padding-top:10px; border-top:0.5px solid #EBEBEB;">
+          <i class="ti ti-paperclip" style="font-size:14px; color:#6B6B6B;" aria-hidden="true"></i>
+          <span style="font-size:12px; color:#6B6B6B;">2 documents attached</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="token-row"><span class="token-name">Background</span><span class="token-val">white</span></div>
+      <div class="token-row"><span class="token-name">Border</span><span class="token-val">0.5px solid #DEDEDE</span></div>
+      <div class="token-row"><span class="token-name">Radius</span><span class="token-val">12px</span></div>
+      <div class="token-row"><span class="token-name">Padding</span><span class="token-val">12px 14px</span></div>
+      <div class="token-row"><span class="token-name">Title</span><span class="token-val">15px · weight 500 · #1A1A1A</span></div>
+      <div class="token-row"><span class="token-name">Subtitle</span><span class="token-val">12px · #6B6B6B</span></div>
+      <div class="token-row"><span class="token-name">Date</span><span class="token-val">11px · #6B6B6B · top-right</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">Component tokens — pet switcher card</p>
+    <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:12px;">
+      <div style="display:flex; align-items:center; gap:12px; background:#F9E0F3; border:1.5px solid #F279C5; border-radius:9999px; padding:10px 16px;">
+        <div class="pet-avatar" style="background:#F9E0F3;">🐶</div>
+        <div style="flex:1;">
+          <div style="font-size:14px; font-weight:600; color:#1A1A1A;">Bruno</div>
+          <div style="font-size:11px; color:#6B6B6B;">Golden Retriever · 4 yrs</div>
+        </div>
+        <i class="ti ti-check" style="font-size:16px; color:#F279C5;" aria-hidden="true"></i>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; background:white; border:0.5px solid #DEDEDE; border-radius:9999px; padding:10px 16px;">
+        <div class="pet-avatar" style="background:#F0EEF8;">🐱</div>
+        <div style="flex:1;">
+          <div style="font-size:14px; font-weight:500; color:#1A1A1A;">Mochi</div>
+          <div style="font-size:11px; color:#6B6B6B;">Domestic shorthair · 2 yrs</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="token-row"><span class="token-name">Active</span><span class="token-val">bg #F9E0F3 · border 1.5px #F279C5 · radius 9999px</span></div>
+      <div class="token-row"><span class="token-name">Idle</span><span class="token-val">bg white · border 0.5px #DEDEDE · radius 9999px</span></div>
+      <div class="token-row"><span class="token-name">Avatar</span><span class="token-val">40px · radius 14px · emoji centred</span></div>
+      <div class="token-row"><span class="token-name">Padding</span><span class="token-val">10px 16px</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">Component tokens — info banner</p>
+    <div class="banner" style="margin-bottom: 10px;">
+      <span style="font-size:18px;">👆</span>
+      <div style="font-size:13px; color:#1A1A1A; line-height:1.5;">I agree to answer these questions honestly as my <u>duty to take reasonable care</u></div>
+    </div>
+    <div class="card">
+      <div class="token-row"><span class="token-name">Background</span><span class="token-val">#EEF0F8 (lavender tint — confirmed from screenshots)</span></div>
+      <div class="token-row"><span class="token-name">Radius</span><span class="token-val">10px</span></div>
+      <div class="token-row"><span class="token-name">Padding</span><span class="token-val">12px 14px</span></div>
+      <div class="token-row"><span class="token-name">Font</span><span class="token-val">13px · #1A1A1A · 1.5 line-height</span></div>
+      <div class="token-row"><span class="token-name">Emoji</span><span class="token-val">18px · Fetch uses emoji liberally for warmth</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">Iconography — nav + primary actions</p>
+    <div class="note">Lucide React in the actual build. 20px standard, 24px for nav bar. Stroke width 1.5px. All icons #1A1A1A idle, #F279C5 active.</div>
+    <div class="icon-grid">
+      <div class="icon-item">
+        <i class="ti ti-paw" style="font-size:22px; color:#F279C5;" aria-hidden="true"></i>
+        <div><div class="icon-label">Home / pets</div><div class="icon-use">Nav · active tab</div></div>
+      </div>
+      <div class="icon-item">
+        <i class="ti ti-timeline" style="font-size:22px; color:#1A1A1A;" aria-hidden="true"></i>
+        <div><div class="icon-label">Timeline</div><div class="icon-use">Nav · main feature</div></div>
+      </div>
+      <div class="icon-item">
+        <i class="ti ti-file-text" style="font-size:22px; color:#1A1A1A;" aria-hidden="true"></i>
+        <div><div class="icon-label">Records</div><div class="icon-use">Nav · documents vault</div></div>
+      </div>
+      <div class="icon-item">
+        <i class="ti ti-user" style="font-size:22px; color:#1A1A1A;" aria-hidden="true"></i>
+        <div><div class="icon-label">Profile</div><div class="icon-use">Nav · account</div></div>
+      </div>
+      <div class="icon-item">
+        <i class="ti ti-plus" style="font-size:22px; color:white; background:#1A1A1A; border-radius:50%; padding:5px;" aria-hidden="true"></i>
+        <div><div class="icon-label">Add event</div><div class="icon-use">FAB · bottom right</div></div>
+      </div>
+      <div class="icon-item">
+        <i class="ti ti-chevron-left" style="font-size:22px; color:#1A1A1A;" aria-hidden="true"></i>
+        <div><div class="icon-label">Back</div><div class="icon-use">Nav bar · top left</div></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">Iconography — event types</p>
+    <div class="icon-grid">
+      <div class="icon-item">
+        <i class="ti ti-stethoscope" style="font-size:22px; color:#1D9E75;" aria-hidden="true"></i>
+        <div><div class="icon-label">Vet visit</div><div class="icon-use">Teal #1D9E75</div></div>
+      </div>
+      <div class="icon-item">
+        <i class="ti ti-pill" style="font-size:22px; color:#E8A020;" aria-hidden="true"></i>
+        <div><div class="icon-label">Medication</div><div class="icon-use">Amber #E8A020</div></div>
+      </div>
+      <div class="icon-item">
+        <i class="ti ti-shield-check" style="font-size:22px; color:#5B8DEF;" aria-hidden="true"></i>
+        <div><div class="icon-label">Insurance</div><div class="icon-use">Blue #5B8DEF</div></div>
+      </div>
+      <div class="icon-item">
+        <i class="ti ti-heart" style="font-size:22px; color:#9B72CF;" aria-hidden="true"></i>
+        <div><div class="icon-label">Wellness</div><div class="icon-use">Purple #9B72CF</div></div>
+      </div>
+      <div class="icon-item">
+        <i class="ti ti-star" style="font-size:22px; color:#F279C5;" aria-hidden="true"></i>
+        <div><div class="icon-label">Milestone</div><div class="icon-use">Pink #F279C5</div></div>
+      </div>
+      <div class="icon-item">
+        <i class="ti ti-alert-triangle" style="font-size:22px; color:#E05A5A;" aria-hidden="true"></i>
+        <div><div class="icon-label">Emergency</div><div class="icon-use">Red #E05A5A</div></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec" style="margin-bottom:0;">
+    <p class="lbl">Iconography — utility</p>
+    <div class="icon-grid">
+      <div class="icon-item">
+        <i class="ti ti-paperclip" style="font-size:20px; color:#6B6B6B;" aria-hidden="true"></i>
+        <div><div class="icon-label">Attachment</div><div class="icon-use">Documents on event card</div></div>
+      </div>
+      <div class="icon-item">
+        <i class="ti ti-calendar" style="font-size:20px; color:#6B6B6B;" aria-hidden="true"></i>
+        <div><div class="icon-label">Date picker</div><div class="icon-use">Add event form</div></div>
+      </div>
+      <div class="icon-item">
+        <i class="ti ti-chevron-right" style="font-size:20px; color:#6B6B6B;" aria-hidden="true"></i>
+        <div><div class="icon-label">Drill in</div><div class="icon-use">Detail chip suffix</div></div>
+      </div>
+      <div class="icon-item">
+        <i class="ti ti-chevron-down" style="font-size:20px; color:#6B6B6B;" aria-hidden="true"></i>
+        <div><div class="icon-label">Expand</div><div class="icon-use">Collapsed sections</div></div>
+      </div>
+      <div class="icon-item">
+        <i class="ti ti-filter" style="font-size:20px; color:#6B6B6B;" aria-hidden="true"></i>
+        <div><div class="icon-label">Filter</div><div class="icon-use">Timeline filter bar</div></div>
+      </div>
+      <div class="icon-item">
+        <i class="ti ti-search" style="font-size:20px; color:#6B6B6B;" aria-hidden="true"></i>
+        <div><div class="icon-label">Search</div><div class="icon-use">Records vault search</div></div>
+      </div>
+    </div>
+    <p class="mono" style="margin-top:12px;">All utility icons: 20px · color #6B6B6B · Lucide React in build (import individually)</p>
+  </div>
+
+</div>

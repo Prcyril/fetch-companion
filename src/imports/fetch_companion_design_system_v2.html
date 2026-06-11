@@ -1,0 +1,242 @@
+
+<style>
+  .r { font-family: var(--font-sans); padding: 1.25rem 0; }
+  .sec { margin-bottom: 2rem; }
+  .lbl { font-size: 11px; font-weight: 500; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.75rem 0; }
+  .sw-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .sw { border-radius: 10px; padding: 10px 12px; min-width: 100px; flex: 1; }
+  .sw-name { font-size: 12px; font-weight: 500; }
+  .sw-hex { font-size: 11px; margin-top: 2px; opacity: 0.8; font-family: var(--font-mono); }
+  .sw-role { font-size: 10px; margin-top: 4px; opacity: 0.65; line-height: 1.4; }
+  .changed { border: 2px solid #F279C5; }
+  .badge-changed { display: inline-block; background: #F9E0F3; color: #A0348A; font-size: 10px; font-weight: 500; border-radius: 4px; padding: 1px 6px; margin-left: 6px; vertical-align: middle; }
+  .type-row { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .type-meta { font-size: 11px; color: var(--color-text-tertiary); margin-top: 4px; font-family: var(--font-mono); }
+  .pill { display: inline-flex; align-items: center; gap: 5px; border-radius: 9999px; padding: 4px 12px; font-size: 12px; font-weight: 500; }
+  .chip { display: inline-flex; align-items: center; border-radius: 9999px; padding: 5px 12px; font-size: 12px; border: 0.5px solid #DEDEDE; background: white; color: #1A1A1A; gap: 4px; white-space: nowrap; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+  .ev-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  .ev-chip { display: flex; align-items: center; gap: 7px; background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: 9999px; padding: 5px 12px; font-size: 12px; font-weight: 500; color: var(--color-text-primary); }
+  .sp-row { display: flex; align-items: flex-end; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+  .sp-label { font-size: 11px; color: var(--color-text-secondary); text-align: center; margin-top: 4px; }
+  .mo-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  .mo-chip { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: 8px; padding: 8px 10px; font-size: 12px; }
+  .mo-val { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
+  .mo-name { font-size: 10px; color: var(--color-text-tertiary); margin-top: 2px; }
+  .note { background: var(--color-background-secondary); border-radius: 8px; padding: 10px 12px; font-size: 12px; color: var(--color-text-secondary); border-left: 3px solid #F279C5; margin-top: 8px; }
+  .comp-stack { display: flex; flex-direction: column; gap: 10px; }
+  .card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: 12px; padding: 14px; }
+</style>
+
+<div class="r">
+  <div class="sec">
+    <p class="lbl">Fetch Companion — Day 0 v2</p>
+    <p style="font-size: 20px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 4px;">Design System</p>
+    <p style="font-size: 13px; color: var(--color-text-secondary); margin: 0;">Updated from real app screenshots. Changed values marked <span class="badge-changed">updated</span></p>
+  </div>
+
+  <hr class="divider" style="margin-top: 0;">
+
+  <div class="sec">
+    <p class="lbl">Colour — base <span class="badge-changed">updated</span></p>
+    <div class="sw-row" style="margin-bottom: 8px;">
+      <div class="sw changed" style="background: #F279C5; color: white;">
+        <div class="sw-name">Fetch Pink</div>
+        <div class="sw-hex">#F279C5</div>
+        <div class="sw-role">Accent — selections, active inputs, pills. NOT primary CTA</div>
+      </div>
+      <div class="sw changed" style="background: #F9E0F3; color: #A0348A;">
+        <div class="sw-name">Pink Wash</div>
+        <div class="sw-hex">#F9E0F3</div>
+        <div class="sw-role">Selected state bg, tag fills, soft highlights</div>
+      </div>
+    </div>
+    <div class="sw-row" style="margin-bottom: 8px;">
+      <div class="sw changed" style="background: #F5F5F7; border: 0.5px solid #DEDEDE; color: #1A1A1A;">
+        <div class="sw-name">Canvas</div>
+        <div class="sw-hex">#F5F5F7</div>
+        <div class="sw-role">App background — cool Apple grey</div>
+      </div>
+      <div class="sw" style="background: #FFFFFF; border: 0.5px solid #DEDEDE; color: #1A1A1A;">
+        <div class="sw-name">Surface</div>
+        <div class="sw-hex">#FFFFFF</div>
+        <div class="sw-role">Cards, sheets, nav bar</div>
+      </div>
+      <div class="sw" style="background: #F0F0F2; border: 0.5px solid #DEDEDE; color: #1A1A1A;">
+        <div class="sw-name">Surface Alt</div>
+        <div class="sw-hex">#F0F0F2</div>
+        <div class="sw-role">Inactive inputs, divider areas</div>
+      </div>
+    </div>
+    <div class="sw-row">
+      <div class="sw" style="background: #1A1A1A; color: white;">
+        <div class="sw-name">Ink</div>
+        <div class="sw-hex">#1A1A1A</div>
+        <div class="sw-role">Primary text, headings</div>
+      </div>
+      <div class="sw" style="background: #6B6B6B; color: white;">
+        <div class="sw-name">Muted</div>
+        <div class="sw-hex">#6B6B6B</div>
+        <div class="sw-role">Secondary text, timestamps</div>
+      </div>
+      <div class="sw" style="background: #DEDEDE; color: #1A1A1A;">
+        <div class="sw-name">Border</div>
+        <div class="sw-hex">#DEDEDE</div>
+        <div class="sw-role">Card edges, dividers, chip outlines</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">CTA hierarchy <span class="badge-changed">updated</span></p>
+    <div class="note" style="margin-bottom: 12px;">Fetch uses <strong>black for primary actions</strong>, pink for selections/accent only. This is the most important thing to carry into the build.</div>
+    <div class="comp-stack">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <button style="width: 100%; background: #1A1A1A; color: white; border: none; border-radius: 9999px; padding: 14px; font-size: 15px; font-weight: 500; cursor: pointer;">Add event</button>
+        <button style="width: 100%; background: white; color: #1A1A1A; border: 1px solid #DEDEDE; border-radius: 9999px; padding: 14px; font-size: 15px; cursor: pointer;">View all records</button>
+        <div style="display: flex; gap: 8px;">
+          <button style="flex: 1; background: #F279C5; color: white; border: none; border-radius: 9999px; padding: 14px; font-size: 15px; font-weight: 500; cursor: pointer;">Bruno</button>
+          <button style="flex: 1; background: white; color: #1A1A1A; border: 1px solid #DEDEDE; border-radius: 9999px; padding: 14px; font-size: 15px; cursor: pointer;">Mochi</button>
+        </div>
+      </div>
+      <p style="font-size: 11px; color: var(--color-text-tertiary); margin: 0;">Primary: black pill · Secondary: white outline pill · Selected: pink pill · All full-width within 20px screen padding · fit-content when inline</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">Detail chips <span class="badge-changed">updated</span></p>
+    <div class="note" style="margin-bottom: 12px;">Fetch uses auto-width pill chips for metadata — content hugs text. The Mac screenshots made these look full-width but on mobile they're compact.</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
+      <span class="chip">Bruno <i class="ti ti-chevron-right" style="font-size:12px;" aria-hidden="true"></i></span>
+      <span class="chip">Dog <i class="ti ti-chevron-right" style="font-size:12px;" aria-hidden="true"></i></span>
+      <span class="chip">4 yr old <i class="ti ti-chevron-right" style="font-size:12px;" aria-hidden="true"></i></span>
+      <span class="chip">Golden Retriever <i class="ti ti-chevron-right" style="font-size:12px;" aria-hidden="true"></i></span>
+      <span class="chip">Insured <i class="ti ti-chevron-right" style="font-size:12px;" aria-hidden="true"></i></span>
+    </div>
+    <p style="font-size: 11px; color: var(--color-text-tertiary); margin-top: 8px;">width: fit-content · border-radius: 9999px · padding: 5px 12px · border: 0.5px #DEDEDE</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">Event type colours</p>
+    <div class="ev-row">
+      <div class="ev-chip"><span class="dot" style="background:#1D9E75;"></span>Vet visit</div>
+      <div class="ev-chip"><span class="dot" style="background:#E8A020;"></span>Medication</div>
+      <div class="ev-chip"><span class="dot" style="background:#5B8DEF;"></span>Insurance</div>
+      <div class="ev-chip"><span class="dot" style="background:#9B72CF;"></span>Wellness</div>
+      <div class="ev-chip"><span class="dot" style="background:#F279C5;"></span>Milestone</div>
+      <div class="ev-chip"><span class="dot" style="background:#E05A5A;"></span>Emergency</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">Typography <span class="badge-changed">updated</span></p>
+    <div class="type-row">
+      <div style="font-family: Georgia, serif; font-size: 26px; font-weight: 700; color: var(--color-text-primary); letter-spacing: -0.02em; line-height: 1.2;">Bruno's journey</div>
+      <div class="type-meta">Display · Fraunces · 26px · 700 · -0.02em · pet name + screen titles only</div>
+    </div>
+    <div class="type-row">
+      <div style="font-size: 22px; font-weight: 700; color: var(--color-text-primary); line-height: 1.2; text-align: center;">What happened at the vet?</div>
+      <div class="type-meta">Onboarding heading · System sans · 22px · 700 · centered · confirmed from screenshots</div>
+    </div>
+    <div class="type-row">
+      <div style="font-size: 15px; font-weight: 500; color: var(--color-text-primary);">Annual vaccination</div>
+      <div class="type-meta">Card title · System sans · 15px · 500</div>
+    </div>
+    <div class="type-row">
+      <div style="font-size: 13px; font-weight: 400; color: var(--color-text-primary); line-height: 1.5;">All vitals normal. Weight stable at 32kg. Next appointment recommended in 12 months.</div>
+      <div class="type-meta">Body · System sans · 13px · 400 · 1.5 line-height</div>
+    </div>
+    <div class="type-row" style="border-bottom: none; margin-bottom: 0;">
+      <div style="font-size: 12px; color: #6B6B6B;">14 March 2025 · City Road Animal Hospital</div>
+      <div class="type-meta">Caption · 12px · 400 · #6B6B6B</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">Border radius <span class="badge-changed">updated</span></p>
+    <div class="note" style="margin-bottom: 12px;">Fetch is almost entirely pill-shaped. Use 9999px for all buttons and interactive chips. Reserve 12px for cards only.</div>
+    <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 8px;">
+      <div style="text-align: center;">
+        <div style="background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: 8px; width: 48px; height: 32px;"></div>
+        <div class="sp-label">8px<br>Cards inner</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: 12px; width: 56px; height: 40px;"></div>
+        <div class="sp-label">12px<br>Cards</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: 9999px; width: 64px; height: 32px;"></div>
+        <div class="sp-label">9999px<br>ALL buttons + chips</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: 14px; width: 56px; height: 56px;"></div>
+        <div class="sp-label">14px<br>Pet avatar</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">Spacing</p>
+    <div class="sp-row">
+      <div><div style="background:#F279C5; border-radius:3px; width:4px; height:4px;"></div><div class="sp-label">4px</div></div>
+      <div><div style="background:#F279C5; border-radius:3px; width:8px; height:8px;"></div><div class="sp-label">8px</div></div>
+      <div><div style="background:#F279C5; border-radius:3px; width:12px; height:12px;"></div><div class="sp-label">12px</div></div>
+      <div><div style="background:#F279C5; border-radius:3px; width:16px; height:16px;"></div><div class="sp-label">16px</div></div>
+      <div><div style="background:#F279C5; border-radius:3px; width:20px; height:20px;"></div><div class="sp-label">20px<br>screen pad</div></div>
+      <div><div style="background:#F279C5; border-radius:3px; width:24px; height:24px;"></div><div class="sp-label">24px</div></div>
+      <div><div style="background:#F279C5; border-radius:3px; width:32px; height:32px;"></div><div class="sp-label">32px</div></div>
+    </div>
+    <p style="font-size: 11px; color: var(--color-text-tertiary); margin-top: 10px;">Screen horizontal padding: 20px · Card internal: 16px · Section gaps: 24px · Bottom CTA from safe area: 16px</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">Motion</p>
+    <div class="mo-row">
+      <div class="mo-chip"><div class="mo-val">200ms</div><div class="mo-name">Micro / tap</div></div>
+      <div class="mo-chip"><div class="mo-val">300ms</div><div class="mo-name">Card expand</div></div>
+      <div class="mo-chip"><div class="mo-val">400ms</div><div class="mo-name">Sheet entry</div></div>
+      <div class="mo-chip"><div class="mo-val">500ms</div><div class="mo-name">Page transition</div></div>
+      <div class="mo-chip"><div class="mo-val">ease-out</div><div class="mo-name">All easing</div></div>
+      <div class="mo-chip"><div class="mo-val">spring</div><div class="mo-name">Bottom sheet only</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec">
+    <p class="lbl">Signature element</p>
+    <div style="background: var(--color-background-secondary); border-radius: 10px; padding: 14px; border-left: 3px solid #F279C5;">
+      <p style="font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 6px;">The gradient timeline spine</p>
+      <p style="font-size: 12px; color: var(--color-text-secondary); margin: 0 0 12px;">A vertical line running the full height of the timeline — fades from pale pink at the earliest event up to full Fetch Pink at today. Subtle, intentional, memorable.</p>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 4px; height: 80px; border-radius: 2px; background: linear-gradient(to top, #F9E0F3, #F279C5);"></div>
+        <div style="font-size: 11px; color: var(--color-text-tertiary); line-height: 1.8;">Adoption day (oldest)<br>↑<br>Today (most recent)</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="sec" style="margin-bottom: 0;">
+    <p class="lbl">Fonts</p>
+    <div style="background: var(--color-background-secondary); border-radius: 8px; padding: 10px 12px; font-family: var(--font-mono); font-size: 11px; color: var(--color-text-primary);">
+      @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+    </div>
+    <p style="font-size: 11px; color: var(--color-text-tertiary); margin-top: 8px;">Fraunces: display only (pet names, screen titles). Plus Jakarta Sans: everything else. System fallback: -apple-system, BlinkMacSystemFont.</p>
+  </div>
+</div>
